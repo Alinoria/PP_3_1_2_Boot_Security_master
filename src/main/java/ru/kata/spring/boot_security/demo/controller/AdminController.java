@@ -21,13 +21,13 @@ public class AdminController {
         this.roleService = roleService;
     }
     @GetMapping()
-    public String adminPage(Model model) {
+    public String getAdminPage(Model model) {
         model.addAttribute("users", userService.findAll());
 
         return "admin";
     }
     @GetMapping("/new")
-    public String newUserForm(Model model) {
+    public String showNewUserForm(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("roles", roleService.findAll());
         return "new";
