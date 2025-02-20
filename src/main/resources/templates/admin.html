@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Admin Panel</title>
+</head>
+<body>
+<h1>Admin Panel</h1><a href="/admin/new">Create New User</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Roles</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.username}">Username</td>
+        <td th:text="${user.roles}">Roles</td>
+        <td><a th:href="@{/admin/edit/{id}(id=${user.id})}">Edit</a>
+            <a th:href="@{/admin/delete/{id}(id=${user.id})}" th:onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/logout"/>Выйти из аккаунта</a>
+<br/>
+<a href="/">На страницу <b>домой</b></a>
+</body>
+</html>

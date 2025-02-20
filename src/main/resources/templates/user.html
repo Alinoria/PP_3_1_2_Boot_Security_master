@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Roles</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${user}">
+        <td th:text="${user.username}">Username</td>
+        <td th:text="${user.roles}">Roles</td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">На страницу <b>домой</b></a>
+<br/>
+<a href="/logout"/>Выйти из аккаунта</a>
+</body>
+</html>
